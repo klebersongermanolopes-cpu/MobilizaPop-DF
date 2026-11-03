@@ -1,0 +1,18 @@
+{
+  "name": "mobiliza-pop",
+  "private": true,
+  "type": "module",
+  "description": "Mobiliza Pop: portal de alertas e checagem + rede social de mobilização (PHP/MySQL na Hostinger) + robô com Claude.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "site": "node robo/servidor.mjs",
+    "coletar": "node robo/coletar.mjs",
+    "escrever": "node robo/escrever-ia.mjs",
+    "validar": "node robo/validar.mjs",
+    "testar": "node --test \"robo/testes/*.test.mjs\" testes/api.test.mjs",
+    "testar-api": "node --test testes/api.test.mjs",
+    "rede-local": "node testes/rede-local.mjs"
+  }
+}

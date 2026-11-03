@@ -1,0 +1,31 @@
+{
+  "atualizado_em": "2026-10-28",
+  "eventos": [
+    {
+      "data": null,
+      "rotulo_data": "Aberta",
+      "titulo": "Consulta pública do PL 3615/2019",
+      "descricao": "Estatuto dos CACs, no e-Cidadania do Senado.",
+      "tag": "Votar",
+      "url": "https://www12.senado.leg.br/ecidadania/visualizacaomateria?id=137353",
+      "exemplo": false
+    },
+    {
+      "data": "2027-02-01",
+      "titulo": "Posse do novo Congresso",
+      "descricao": "Deputados e senadores eleitos em 2026 assumem os mandatos.",
+      "tag": "Acompanhar",
+      "url": null,
+      "exemplo": false
+    },
+    {
+      "data": null,
+      "rotulo_data": "A definir",
+      "titulo": "Próximo ato ou reunião aberta",
+      "descricao": "Espaço para a equipe cadastrar atos, plenárias e mutirões.",
+      "tag": "Exemplo",
+      "url": null,
+      "exemplo": true
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+/* Painel da equipe */
+body.painel { background-color: var(--papel); }
+.painel .menu a .n:not(:empty) { background: var(--vermelho); color: var(--papel); padding: 0 5px; margin-left: 4px; }
+.painel .conta { gap: 8px; }
+.painel-corpo { padding-block: 32px 96px; display: grid; gap: 18px; }
+.painel-h { font-size: clamp(48px, 7vw, 96px); }
+.cartoes { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 18px; }
+.cartao-n { border: var(--borda); box-shadow: var(--sombra); background: var(--papel); padding: 18px; text-decoration: none; display: grid; gap: 6px; }
+.cartao-n b { font: 900 64px/0.9 var(--f-display); }
+.cartao-n span { font: 600 12px var(--f-mono); text-transform: uppercase; }
+.cartao-n.verm { background: var(--vermelho); color: var(--papel); }
+.cartao-n.sol { background: var(--sol); }
+.cartao-n.broto { background: var(--broto); }
+.dicas ol { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+.itens { display: grid; gap: 18px; }
+.item { border: var(--borda); background: var(--papel); padding: 16px; display: grid; gap: 10px; box-shadow: 5px 5px 0 var(--tinta); }
+.item.grave { box-shadow: 5px 5px 0 var(--vermelho); border-color: var(--vermelho); }
+.item header { display: grid; gap: 2px; }
+.item header b { font-size: 18px; }
+.item header small { color: var(--cinza); font-size: 13px; }
+.item p { overflow-wrap: anywhere; }
+.motivo { background: var(--sol); border: 2px solid var(--tinta); padding: 6px 10px; font-size: 14px; }
+.midias-painel { display: flex; gap: 8px; flex-wrap: wrap; }
+.midias-painel img, .midias-painel video { max-height: 260px; max-width: 100%; border: 2px solid var(--tinta); }
+.decidir { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.decidir input { flex: 1 1 220px; font: inherit; font-size: 15px; padding: 8px; border: 2px solid var(--tinta); background: var(--papel); }
+.busca-pessoas { display: flex; gap: 8px; max-width: 520px; }
+.busca-pessoas input { flex: 1; font: inherit; padding: 10px; border: var(--borda); background: var(--papel); }
+.tabela-rolagem { overflow-x: auto; border: var(--borda); }
+.tabela { border-collapse: collapse; width: 100%; font-size: 14px; background: var(--papel); }
+.tabela th { font: 600 11px var(--f-mono); text-transform: uppercase; text-align: left; background: var(--tinta); color: var(--papel); padding: 8px; }
+.tabela td { border-top: 2px solid var(--linha); padding: 8px; vertical-align: top; }
+.tabela select { font: inherit; padding: 4px; border: 2px solid var(--tinta); background: var(--papel); }
+.tabela small { color: var(--cinza); }
+.form-oficial { max-width: 760px; }
+.pilulas .pilula { text-transform: uppercase; }

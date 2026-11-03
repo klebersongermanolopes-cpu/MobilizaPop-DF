@@ -1,0 +1,5 @@
+# Painel antigo de conteúdo editorial (Sveltia CMS, login com token do GitHub): precisa de CSP própria.
+<IfModule mod_headers.c>
+  Header always unset Content-Security-Policy
+  Header always set X-Robots-Tag "noindex, nofollow"
+</IfModule>

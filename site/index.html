@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mobiliza Pop</title>
+<meta name="description" content="Notícias independentes, checagem e mobilização: acompanhe parlamentares e projetos de lei em alerta.">
+<meta name="theme-color" content="#588157">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mobiliza Pop">
+<meta property="og:description" content="A mentira corre. A gente corre mais. Alertas de projetos de lei, checagem e monitor do Congresso.">
+<meta property="og:image" content="assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Archivo:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/css/estilo.css">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.css">
+<link rel="stylesheet" href="assets/css/rede.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-sai" viewBox="0 0 16 16"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/></symbol>
+  <symbol id="i-punho" viewBox="0 0 24 24"><path d="M7 11V6.5a1.5 1.5 0 0 1 3 0V10m0-4.5V5a1.5 1.5 0 0 1 3 0v5m0-4.5a1.5 1.5 0 0 1 3 0V11m0-3.5a1.5 1.5 0 0 1 3 0V14a7 7 0 0 1-7 7h-1a6 6 0 0 1-6-6v-2a2 2 0 0 1 2-2h3" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-balao" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pino" viewBox="0 0 24 24"><path d="M12 22s7-7.2 7-12.5A7 7 0 0 0 5 9.5C5 14.8 12 22 12 22z" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="12" cy="9.5" r="2.6" fill="currentColor"/></symbol>
+  <symbol id="i-bandeira" viewBox="0 0 24 24"><path d="M5 21V4m0 0h12l-2 4 2 4H5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4l13 8-13 8z" fill="currentColor"/></symbol>
+  <symbol id="i-mais" viewBox="0 0 16 16"><path d="M8 2v12M2 8h12" fill="none" stroke="currentColor" stroke-width="2.6"/></symbol>
+  <symbol id="i-x" viewBox="0 0 16 16"><path d="M3 3l10 10M13 3 3 13" fill="none" stroke="currentColor" stroke-width="2.6"/></symbol>
+  <symbol id="i-seta" viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/></symbol>
+</svg>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="#inicio" aria-label="Mobiliza Pop, página inicial">
+      <span class="selo selo-mini" aria-hidden="true"><span class="marca-img"></span></span>
+      <b>Mobiliza<span>Pop</span></b>
+    </a>
+    <nav class="menu" aria-label="Principal">
+      <a href="#inicio" data-r="inicio">Início</a>
+      <a href="#rede" data-r="rede" class="destaque">Rede</a>
+      <a href="#mapa" data-r="mapa">Mapa</a>
+      <a href="#alertas" data-r="alertas">Alertas</a>
+      <a href="#monitor" data-r="monitor">Monitor</a>
+      <a href="#checagem" data-r="checagem">Checagem</a>
+      <a href="#boletim" data-r="boletim">Boletim</a>
+      <a href="#sobre" data-r="sobre">Sobre</a>
+    </nav>
+    <div class="conta" id="conta"><button type="button" class="mini forte" data-entrar>Entrar</button></div>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<!-- ================= INÍCIO ================= -->
+<section class="view" id="v-inicio" aria-label="Início">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow"><span class="tag">Notícias independentes</span><span class="tag verm">Checagem</span><span class="tag">Mobilização</span></div>
+        <h1>
+          <span class="ln"><span>A mentira</span></span>
+          <span class="ln"><span class="hl">corre.</span></span>
+          <span class="ln"><span>A gente</span></span>
+          <span class="ln"><span class="hl2">corre mais.</span></span>
+        </h1>
+        <p class="lead">Acompanhamos o Congresso, explicamos os projetos de lei que ameaçam direitos e mostramos a quem cobrar.</p>
+        <div class="acoes">
+          <a class="btn verm" href="#alertas">Ver alertas</a>
+          <a class="btn claro" href="#monitor">Cobrar parlamentares</a>
+          <a class="btn broto" href="#mapa">Mapa dos atos</a>
+        </div>
+      </div>
+      <div class="selo-palco">
+        <svg class="selo-anel" viewBox="0 0 400 400" aria-hidden="true">
+          <defs><path id="anel" d="M200,200 m-176,0 a176,176 0 1,1 352,0 a176,176 0 1,1 -352,0"/></defs>
+          <circle cx="200" cy="200" r="198" class="anel-fundo"/>
+          <text><textPath href="#anel" textLength="1090" lengthAdjust="spacing">NOTÍCIA INDEPENDENTE / CHECAGEM / MOBILIZAÇÃO POPULAR /</textPath></text>
+        </svg>
+        <div class="selo selo-grande" role="img" aria-label="Logo Mobilização Popular"><span class="marca-img"></span></div>
+        <span class="carimbo">Informação é mobilização</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker" aria-hidden="true"><div class="faixa" id="ticker"></div></div>
+
+  <section class="manifesto" aria-label="Manifesto">
+    <div class="wrap">
+      <p class="mono">Manifesto</p>
+      <p class="grande" id="manifesto-txt">Nossa luta é contra a <em>desinformação</em>. Mal acaba uma eleição e a mentira já está nos grupos. A gente traduz o que acontece no Congresso em linguagem simples, mostra quem votou em quê e coloca na sua mão o caminho para <em>cobrar</em>.</p>
+      <p class="assina">Mobiliza Pop / Mobilização Popular</p>
+    </div>
+  </section>
+
+  <section class="secao">
+    <div class="wrap">
+      <div class="secao-cab">
+        <h2>Quatro<br>frentes</h2>
+        <p>Tudo gratuito, aberto e feito para caber no celular de quem está na correria.</p>
+      </div>
+      <div class="frentes">
+        <a class="frente f1" href="#monitor"><span class="tag">Dados oficiais</span><h3>Monitor</h3><p>Deputados e senadores: partido, estado, contato oficial e como votaram nos projetos em alerta.</p><span class="ir">Abrir o monitor</span></a>
+        <a class="frente f2" href="#alertas"><span class="tag">Urgente</span><h3>Alertas</h3><p>Projetos que ameaçam direitos, explicados sem juridiquês e com o que fazer agora.</p><span class="ir">Ver os alertas</span></a>
+        <a class="frente f3" href="#checagem"><span class="tag">Contra fake news</span><h3>Checagem</h3><p>O que está circulando nos grupos, com fonte oficial e veredito.</p><span class="ir">Ver as checagens</span></a>
+        <a class="frente f4" href="#boletim"><span class="tag">Todo dia</span><h3>Boletim</h3><p>O resumo do dia pronto para mandar no WhatsApp.</p><span class="ir">Ler o boletim</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="passos" aria-label="Como cobrar em três passos">
+    <div class="passos-pin">
+      <div class="passos-trilho">
+        <div class="passo intro"><p class="mono" style="color:var(--broto)">Continue rolando</p><h2>Cobrar dá resultado em 3 passos</h2></div>
+        <article class="passo"><span class="n">1</span><h3>Entenda o projeto</h3><p>Cada alerta tem um resumo curto: o que é, o que muda na sua vida e em que fase está.</p><a class="btn peq" href="#alertas">Ler os alertas</a></article>
+        <article class="passo"><span class="n">2</span><h3>Vote na consulta</h3><p>O Senado e a Câmara abrem consultas públicas. O placar pesa na conversa entre os parlamentares.</p><a class="btn peq broto" href="https://www12.senado.leg.br/ecidadania" target="_blank" rel="noopener">Abrir o e-Cidadania <svg class="ico"><use href="#i-sai"/></svg></a></article>
+        <article class="passo"><span class="n">3</span><h3>Fale com quem decide</h3><p>No monitor você copia o e-mail oficial e uma mensagem pronta. Leva um minuto.</p><a class="btn peq claro" href="#monitor">Achar meu parlamentar</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao" aria-labelledby="agenda-titulo">
+    <div class="wrap">
+      <div class="secao-cab">
+        <h2 id="agenda-titulo">Agenda</h2>
+        <p>Datas que importam. A equipe atualiza toda semana.</p>
+      </div>
+      <div class="agenda" id="agenda"></div>
+    </div>
+  </section>
+</section>
+
+<!-- ================= ALERTAS (lista) ================= -->
+<section class="view" id="v-alertas" aria-label="Alertas" hidden>
+  <div class="pag-topo">
+    <div class="wrap">
+      <h1>Projetos em alerta</h1>
+      <p>Projetos de lei que ameaçam direitos, explicados em linguagem simples. Cada um traz o que fazer agora.</p>
+    </div>
+  </div>
+  <div class="wrap"><div class="lista-alertas" id="lista-alertas"></div></div>
+</section>
+
+<!-- ================= ALERTA (detalhe) ================= -->
+<section class="view" id="v-alerta" aria-label="Alerta" hidden></section>
+
+<!-- ================= MONITOR ================= -->
+<section class="view" id="v-monitor" aria-label="Monitor do Congresso" hidden>
+  <div class="pag-topo">
+    <div class="wrap">
+      <h1>Monitor do Congresso</h1>
+      <p>Ache quem representa o seu estado, copie o contato oficial e mande uma mensagem pronta cobrando posição.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="abas" role="tablist" aria-label="Casa legislativa">
+      <button type="button" role="tab" id="aba-camara" aria-selected="true" data-casa="camara">Câmara</button>
+      <button type="button" role="tab" id="aba-senado" aria-selected="false" data-casa="senado">Senado</button>
+    </div>
+    <div class="aviso-faixa" id="status-monitor" hidden></div>
+    <div class="filtros">
+      <div class="campo"><label for="busca">Buscar por nome</label><input id="busca" type="search" placeholder="Ex.: Erika" autocomplete="off"></div>
+      <div class="campo"><label for="uf">Estado</label><select id="uf"><option value="">Todos</option></select></div>
+      <div class="campo"><label for="partido">Partido</label><select id="partido"><option value="">Todos</option></select></div>
+      <div class="campo pl"><label for="pl-cobranca">Cobrar sobre</label><select id="pl-cobranca"></select></div>
+      <div class="contagem" id="contagem" aria-live="polite">0<small>parlamentares</small></div>
+    </div>
+    <div class="grade-parl" id="grade"></div>
+  </div>
+</section>
+
+<!-- ================= CHECAGEM ================= -->
+<section class="view" id="v-checagem" aria-label="Checagem" hidden>
+  <div class="pag-topo">
+    <div class="wrap">
+      <h1>Checagem</h1>
+      <div>
+        <p><b>Confira antes de compartilhar.</b> Toda checagem mostra a frase que está circulando, o que é verdade e a fonte oficial. Sem fonte, não publicamos.</p>
+        <div class="legenda"><span class="veredito falso">Falso</span><span class="veredito enganoso">Enganoso</span><span class="veredito verdadeiro">Verdadeiro</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><div class="checks" id="checks"></div></div>
+</section>
+
+<!-- ================= BOLETIM ================= -->
+<section class="view" id="v-boletim" aria-label="Boletim" hidden>
+  <div class="pag-topo">
+    <div class="wrap">
+      <h1>Boletim do dia</h1>
+      <p>O resumo do que importa, revisado pela equipe e pronto para colar no WhatsApp.</p>
+    </div>
+  </div>
+  <div class="wrap"><div class="boletim" id="boletim"></div></div>
+</section>
+
+<!-- ================= SOBRE ================= -->
+<section class="view" id="v-sobre" aria-label="Sobre" hidden>
+  <div class="pag-topo">
+    <div class="wrap">
+      <h1>Quem somos</h1>
+      <p>Mobiliza Pop é uma iniciativa independente de comunicação e mobilização popular.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="texto-longo">
+      <p>Nosso trabalho é transformar o que acontece no Congresso em informação simples e em ação: votar em consultas públicas, cobrar parlamentares e não deixar a mentira circular sem resposta.</p>
+      <h2>De onde vêm os dados</h2>
+      <ul>
+        <li>Parlamentares, projetos e votações: APIs de dados abertos da Câmara dos Deputados e do Senado Federal.</li>
+        <li>Consultas públicas: e-Cidadania, do Senado.</li>
+        <li>Notícias: veículos jornalísticos, sempre com link para a matéria original.</li>
+      </ul>
+      <h2>Como usamos inteligência artificial</h2>
+      <p>Usamos IA para coletar dados públicos e escrever rascunhos de resumos. Nada é publicado sem a revisão de uma pessoa da equipe. Os conteúdos que passaram por esse processo levam a marca "Rascunho feito com IA, revisado pela equipe".</p>
+      <h2>Privacidade</h2>
+      <p>Este site não usa cookies de rastreamento. O portal funciona sem login; a rede social pede login com Google e segue a nossa <a href="#privacidade">Política de privacidade</a>. Se encontrar um erro ou quiser pedir correção ou retirada de alguma informação (LGPD, art. 18), fale com a gente pelos canais abaixo.</p>
+      <h2>Regras da casa</h2>
+      <ul>
+        <li>Sem fonte, não publicamos.</li>
+        <li>Separamos sempre "investigado", "denunciado" e "condenado".</li>
+        <li>Errou, corrige: toda correção fica registrada na própria página.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REDE (feed) ================= -->
+<section class="view" id="v-rede" aria-label="Rede" hidden>
+  <div class="rede-topo">
+    <div class="wrap">
+      <div>
+        <p class="mono">Rede de mobilização</p>
+        <h1>Quem luta<br><span class="hl">se encontra.</span></h1>
+      </div>
+      <div class="rede-cta">
+        <p>Publique atos, registros e chamados da sua quebrada. Tudo com regra, respeito e fonte.</p>
+        <div class="acoes">
+          <button type="button" class="btn verm peq" data-publicar>Publicar</button>
+          <button type="button" class="btn claro peq" data-novo-evento>Criar evento</button>
+          <a class="btn broto peq" href="#reels">Reels</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap rede-corpo">
+    <div class="stories" id="stories" aria-label="Stories"></div>
+    <div class="rede-grade">
+      <div class="coluna-feed">
+        <div class="filtro-feed" role="tablist" aria-label="Filtrar publicações">
+          <button type="button" role="tab" aria-selected="true" data-feed="">Tudo</button>
+          <button type="button" role="tab" aria-selected="false" data-feed="oficial">Mobiliza Pop</button>
+          <button type="button" role="tab" aria-selected="false" data-feed="foto">Fotos</button>
+          <button type="button" role="tab" aria-selected="false" data-feed="video">Vídeos</button>
+          <button type="button" role="tab" aria-selected="false" data-feed="texto">Textos</button>
+        </div>
+        <div class="filtro-regiao">
+          <select id="feed-uf" aria-label="Estado"><option value="">Brasil todo</option></select>
+          <select id="feed-cidade" aria-label="Cidade" disabled><option value="">Todas as cidades</option></select>
+        </div>
+        <div id="feed" class="feed" aria-live="polite"></div>
+        <button type="button" class="mini mais-feed" id="mais-feed" hidden>Carregar mais</button>
+      </div>
+      <aside class="coluna-lado">
+        <div class="bloco">
+          <p class="mono">Próximos atos</p>
+          <div id="lado-eventos" class="lado-eventos"><p class="fonte-pq">Carregando…</p></div>
+          <a class="mini" href="#mapa">Ver no mapa</a>
+        </div>
+        <div class="bloco sol">
+          <p class="mono">Regras da casa</p>
+          <ul class="regras-curtas">
+            <li>Mobilização pacífica, sempre.</li>
+            <li>Sem fonte, não é notícia.</li>
+            <li>Critique ideias e votos, não pessoas.</li>
+            <li>Proteja o rosto de quem não autorizou.</li>
+          </ul>
+          <a class="mini" href="#regras">Ler todas</a>
+        </div>
+        <div class="bloco">
+          <p class="mono">Ferramentas parceiras</p>
+          <p style="font-size:15px;margin-top:6px">Monitores e iniciativas independentes que ajudam a combater a desinformação.</p>
+          <a class="mini" href="#ferramentas" style="margin-top:10px">Conhecer</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MAPA ================= -->
+<section class="view" id="v-mapa" aria-label="Mapa da mobilização" hidden>
+  <div class="mapa-layout">
+    <div class="mapa-painel">
+      <div class="mapa-cab">
+        <h1>Mapa da<br><span class="hl">mobilização</span></h1>
+        <p>Atos, eventos e registros feitos pela rede. Aproxime por estado, cidade e bairro.</p>
+      </div>
+      <div class="mapa-filtros">
+        <div class="campo"><label for="mapa-uf">Estado</label><select id="mapa-uf"><option value="">Brasil</option></select></div>
+        <div class="campo"><label for="mapa-cidade">Cidade</label><select id="mapa-cidade" disabled><option value="">Escolha o estado</option></select></div>
+        <form class="campo busca-bairro" id="busca-lugar"><label for="mapa-busca">Bairro ou endereço</label><div class="linha"><input id="mapa-busca" type="search" placeholder="Ex.: Ceilândia, DF" autocomplete="off"><button class="mini forte" type="submit">Ir</button></div></form>
+        <div class="campo">
+          <span class="rotulo">Mostrar</span>
+          <div class="pilulas" role="group" aria-label="Período">
+            <button type="button" class="pilula" aria-pressed="true" data-periodo="proximos">Próximos atos</button>
+            <button type="button" class="pilula" aria-pressed="false" data-periodo="passados">Já aconteceram</button>
+            <button type="button" class="pilula" aria-pressed="false" data-periodo="todos">Tudo</button>
+          </div>
+          <label class="marcar"><input type="checkbox" id="mapa-registros" checked> Fotos e vídeos da rede</label>
+        </div>
+        <div class="acoes-mapa">
+          <button type="button" class="btn verm peq" data-novo-evento>Criar evento</button>
+          <button type="button" class="btn claro peq" id="minha-local">Perto de mim</button>
+        </div>
+      </div>
+      <div class="mapa-lista" id="mapa-lista" aria-live="polite"></div>
+    </div>
+    <div class="mapa-area">
+      <div id="mapa" class="mapa" role="application" aria-label="Mapa interativo"></div>
+      <div class="mapa-trilha" id="mapa-trilha"></div>
+      <div class="mapa-legenda"><span><i class="pt pt-ev"></i>Evento</span><span><i class="pt pt-rg"></i>Registro</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REELS ================= -->
+<section class="view" id="v-reels" aria-label="Reels" hidden>
+  <div class="reels" id="reels"></div>
+</section>
+
+<!-- ================= EVENTO ================= -->
+<section class="view" id="v-evento" aria-label="Evento" hidden></section>
+
+<!-- ================= POST ================= -->
+<section class="view" id="v-post" aria-label="Publicação" hidden></section>
+
+<!-- ================= PERFIL ================= -->
+<section class="view" id="v-perfil" aria-label="Perfil" hidden></section>
+
+<!-- ================= FERRAMENTAS ================= -->
+<section class="view" id="v-ferramentas" aria-label="Ferramentas parceiras" hidden>
+  <div class="pag-topo">
+    <div class="wrap">
+      <h1>Ferramentas</h1>
+      <p>Iniciativas independentes e serviços públicos que fortalecem a luta contra a desinformação. Usamos como referência e recomendamos.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="ferramentas">
+      <a class="ferramenta destaque" href="https://radardavirada.pages.dev/" target="_blank" rel="noopener">
+        <span class="tag sol">Referência</span>
+        <h2>Radar da Virada</h2>
+        <p>Iniciativa voluntária que monitora em tempo real o que está bombando nas redes e nas manchetes, só com dados públicos. Entrega cards prontos para mandar no WhatsApp e mostra com transparência os limites dos próprios dados.</p>
+        <span class="ir">radardavirada.pages.dev <svg class="ico"><use href="#i-sai"/></svg></span>
+      </a>
+      <a class="ferramenta" href="https://parlamentometro.com.br/" target="_blank" rel="noopener">
+        <span class="tag">Congresso</span>
+        <h2>Parlamentômetro</h2>
+        <p>Acompanha parlamentares e as proposições ligadas a cada um.</p>
+        <span class="ir">parlamentometro.com.br <svg class="ico"><use href="#i-sai"/></svg></span>
+      </a>
+      <a class="ferramenta" href="https://www12.senado.leg.br/ecidadania" target="_blank" rel="noopener">
+        <span class="tag broto">Oficial</span>
+        <h2>e-Cidadania</h2>
+        <p>Consultas públicas do Senado: vote nos projetos e acompanhe o placar.</p>
+        <span class="ir">senado.leg.br/ecidadania <svg class="ico"><use href="#i-sai"/></svg></span>
+      </a>
+      <a class="ferramenta" href="https://www.camara.leg.br/enquetes" target="_blank" rel="noopener">
+        <span class="tag broto">Oficial</span>
+        <h2>Enquetes da Câmara</h2>
+        <p>Dê sua opinião sobre os projetos em tramitação na Câmara dos Deputados.</p>
+        <span class="ir">camara.leg.br/enquetes <svg class="ico"><use href="#i-sai"/></svg></span>
+      </a>
+      <a class="ferramenta" href="https://www.aosfatos.org/" target="_blank" rel="noopener">
+        <span class="tag verm">Checagem</span>
+        <h2>Aos Fatos</h2>
+        <p>Agência de checagem: confira antes de compartilhar.</p>
+        <span class="ir">aosfatos.org <svg class="ico"><use href="#i-sai"/></svg></span>
+      </a>
+      <a class="ferramenta" href="https://lupa.uol.com.br/" target="_blank" rel="noopener">
+        <span class="tag verm">Checagem</span>
+        <h2>Agência Lupa</h2>
+        <p>Checagem de fatos e educação midiática.</p>
+        <span class="ir">lupa.uol.com.br <svg class="ico"><use href="#i-sai"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REGRAS ================= -->
+<section class="view" id="v-regras" aria-label="Regras da comunidade" hidden>
+  <div class="pag-topo"><div class="wrap"><h1>Regras da comunidade</h1><p>A rede existe para organizar a luta de forma pacífica, verdadeira e dentro da lei. Quem participa concorda com estas regras.</p></div></div>
+  <div class="wrap"><div class="texto-longo regras">
+    <h2>1. Mobilização pacífica</h2>
+    <p>Não é permitido ameaçar, incitar ou organizar violência, depredação ou uso de armas, nem divulgar atos que não sejam públicos, pacíficos e lícitos.</p>
+    <h2>2. Sem notícia falsa</h2>
+    <p>Nossa luta é contra a desinformação. Notícia precisa de fonte. Conteúdo falso ou enganoso é removido, e quem insiste perde a conta. Viu boato? Denuncie com o motivo "Notícia falsa ou enganosa". Conteúdo feito ou alterado com inteligência artificial precisa ser identificado como tal.</p>
+    <h2>3. Respeito a todas as pessoas</h2>
+    <p>Racismo, machismo, LGBTfobia, capacitismo, xenofobia, intolerância religiosa e qualquer discriminação são crime no Brasil e não têm espaço aqui.</p>
+    <h2>4. Defesa da democracia</h2>
+    <p>É proibido pedir golpe, intervenção militar ou o fechamento do Congresso, do STF ou de outras instituições (Lei 14.197/2021).</p>
+    <h2>5. Critique ideias, não pessoas</h2>
+    <p>Pode cobrar, discordar e criticar votos e projetos com firmeza. Não pode xingar, perseguir nem acusar sem prova. Investigado, denunciado e condenado são coisas diferentes: use o termo certo.</p>
+    <h2>6. Proteja quem está do seu lado</h2>
+    <ul>
+      <li>Não exponha CPF, telefone, endereço ou dados de ninguém.</li>
+      <li>Não publique crianças e adolescentes identificáveis.</li>
+      <li>Antes de postar foto de ato, use a ferramenta <b>Borrar rostos</b> em quem não autorizou aparecer.</li>
+      <li>Nunca marque no mapa a casa de alguém. Eventos ficam em locais públicos.</li>
+    </ul>
+    <h2>7. Sem golpe nem spam</h2>
+    <p>Propaganda, correntes e pedidos de dinheiro sem organização identificada são removidos.</p>
+    <h2>8. Período eleitoral</h2>
+    <p>Em período de campanha, valem também as regras do TSE para propaganda eleitoral na internet.</p>
+    <h2>Como a moderação funciona</h2>
+    <ul>
+      <li>Textos aparecem na hora depois de passar por um filtro automático.</li>
+      <li>Fotos, vídeos, stories, reels e eventos de contas novas passam por aprovação antes de aparecer.</li>
+      <li>Conteúdo denunciado por várias pessoas sai do ar até a equipe analisar.</li>
+      <li>As medidas vão de remoção do conteúdo a suspensão e banimento. Toda decisão fica registrada e você pode pedir revisão pelos canais do rodapé.</li>
+    </ul>
+  </div></div>
+</section>
+
+<!-- ================= TERMOS ================= -->
+<section class="view" id="v-termos" aria-label="Termos de uso" hidden>
+  <div class="pag-topo"><div class="wrap"><h1>Termos de uso</h1><p>Versão 1.0. <b>Rascunho para revisão jurídica antes do lançamento.</b></p></div></div>
+  <div class="wrap"><div class="texto-longo">
+    <h2>Quem somos</h2>
+    <p>A rede Mobiliza Pop é mantida por [RAZÃO SOCIAL / CNPJ], com contato pelo e-mail informado no rodapé.</p>
+    <h2>Quem pode usar</h2>
+    <p>Para ler o portal, qualquer pessoa. Para criar conta e publicar na rede, é preciso ter 18 anos ou mais. Em cumprimento ao ECA Digital (Lei 15.211/2025), a idade é confirmada pela equipe antes da primeira publicação.</p>
+    <h2>Sua conta</h2>
+    <p>O login é feito com a sua conta Google. Você é responsável pelo que publica e deve seguir as Regras da comunidade.</p>
+    <h2>O que você publica</h2>
+    <p>O conteúdo continua sendo seu. Ao publicar, você autoriza a Mobiliza Pop a exibi-lo no site e a compartilhá-lo nas nossas redes, com crédito, enquanto ele estiver publicado. Você declara ter o direito de publicar as imagens enviadas e respeitar a imagem de terceiros.</p>
+    <h2>Moderação e remoção</h2>
+    <p>Podemos remover conteúdo e suspender contas que violem estas regras ou a lei. Notificações sobre conteúdo ilícito podem ser feitas por qualquer pessoa, mesmo sem conta, pelo botão "Denunciar" ou pelo e-mail de contato. Fornecemos dados apenas mediante ordem judicial, nos termos do Marco Civil da Internet.</p>
+    <h2>Registros de acesso</h2>
+    <p>Como manda o Marco Civil da Internet (art. 15), guardamos o registro de acesso (IP, data e hora) por 6 meses, em ambiente controlado.</p>
+    <h2>Mudanças</h2>
+    <p>Avisaremos na rede quando estes termos mudarem.</p>
+  </div></div>
+</section>
+
+<!-- ================= PRIVACIDADE ================= -->
+<section class="view" id="v-privacidade" aria-label="Política de privacidade" hidden>
+  <div class="pag-topo"><div class="wrap"><h1>Privacidade</h1><p>Como tratamos seus dados, conforme a LGPD (Lei 13.709/2018). <b>Rascunho para revisão jurídica antes do lançamento.</b></p></div></div>
+  <div class="wrap"><div class="texto-longo">
+    <h2>Quais dados</h2>
+    <ul>
+      <li>Do Google, ao entrar: nome, e-mail, foto e um identificador da conta.</li>
+      <li>Que você informa: apelido, data de nascimento, estado, cidade e bio.</li>
+      <li>O que você publica: textos, fotos, vídeos, eventos, comentários, apoios e presenças.</li>
+      <li>Registro de acesso: IP, porta, data e hora (exigência legal).</li>
+    </ul>
+    <h2>Dado sensível</h2>
+    <p>Participar de uma rede de mobilização popular pode revelar opinião política, que a LGPD trata como dado sensível (art. 5º, II). Por isso pedimos o seu consentimento específico ao criar a conta (art. 11, I), e você pode retirá-lo a qualquer momento apagando a conta. Dica de segurança: você pode usar um apelido e um nome diferente do seu nome civil.</p>
+    <h2>Para quê</h2>
+    <p>Fazer a rede funcionar, moderar conteúdo, cumprir a lei (Marco Civil, ECA Digital) e proteger a comunidade. Não vendemos dados e não usamos cookies de rastreamento nem anúncios.</p>
+    <h2>Com quem compartilhamos</h2>
+    <p>Google (login), Hostinger (hospedagem dos dados no servidor) e autoridades, somente com ordem judicial. Os mapas usam OpenFreeMap/OpenStreetMap, que recebem apenas a área do mapa que você está vendo.</p>
+    <h2>Por quanto tempo</h2>
+    <p>Enquanto a conta existir. Registros de acesso: 6 meses. Stories: saem do ar em 24 horas e do servidor em 7 dias. Fotos têm a localização GPS e outros metadados apagados automaticamente no envio.</p>
+    <h2>Seus direitos (art. 18)</h2>
+    <p>Você pode baixar seus dados e apagar sua conta a qualquer momento no seu perfil. Para outros pedidos, fale com a pessoa encarregada pelo e-mail do rodapé.</p>
+  </div></div>
+</section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div>
+      <h2>Receba o boletim</h2>
+      <p style="color:var(--papel-2);max-width:44ch;margin-top:12px">Um resumo por dia com os alertas, as checagens e o que fazer. Direto no seu WhatsApp.</p>
+      <div style="margin-top:24px" id="cta-canal"></div>
+    </div>
+    <div class="col">
+      <p class="mono" style="color:var(--sol)">Mobiliza Pop</p>
+      <p style="margin-top:10px">Dados das APIs oficiais da Câmara dos Deputados e do Senado Federal.</p>
+      <div class="links" id="links-rodape"></div>
+    </div>
+    <div class="base"><span>Mobiliza Pop / Mobilização Popular</span><span class="links-legais"><a href="#regras">Regras</a> · <a href="#termos">Termos</a> · <a href="#privacidade">Privacidade</a> · <a href="#sobre">Uso de IA</a></span></div>
+  </div>
+</footer>
+
+
+<!-- ================= JANELAS DA REDE ================= -->
+<dialog class="janela" id="j-entrar" aria-labelledby="j-entrar-t">
+  <form method="dialog" class="janela-cab"><h2 id="j-entrar-t">Entrar na rede</h2><button class="fechar" aria-label="Fechar"><svg class="ico"><use href="#i-x"/></svg></button></form>
+  <div class="janela-corpo">
+    <p>Use sua conta Google. Não pedimos senha e não postamos nada em seu nome.</p>
+    <div id="botao-google" class="botao-google"></div>
+    <p class="fonte-pq" id="entrar-aviso"></p>
+    <p class="fonte-pq">Ao entrar você concorda com os <a href="#termos">Termos</a>, as <a href="#regras">Regras</a> e a <a href="#privacidade">Política de privacidade</a>.</p>
+  </div>
+</dialog>
+
+<dialog class="janela" id="j-boasvindas" aria-labelledby="j-boasvindas-t">
+  <div class="janela-cab"><h2 id="j-boasvindas-t">Bem-vindo à rede</h2></div>
+  <form class="janela-corpo" id="form-boasvindas">
+    <p>Antes de participar, três coisas rápidas.</p>
+    <div class="campo"><label for="bv-apelido">Seu apelido na rede</label><input id="bv-apelido" name="apelido" required pattern="[a-z0-9_]{3,30}" maxlength="30" autocomplete="off"><small>Só letras sem acento, números e _. Você não precisa usar seu nome real.</small></div>
+    <div class="linha2">
+      <div class="campo"><label for="bv-uf">Estado</label><select id="bv-uf" name="uf"><option value="">Prefiro não dizer</option></select></div>
+      <div class="campo"><label for="bv-nasc">Data de nascimento</label><input id="bv-nasc" name="nascimento" type="date" required></div>
+    </div>
+    <label class="marcar"><input type="checkbox" name="regras" required> Li e aceito as <a href="#regras" target="_blank">Regras da comunidade</a> e os <a href="#termos" target="_blank">Termos de uso</a>.</label>
+    <label class="marcar"><input type="checkbox" name="sensivel" required> Entendo que minha participação pode revelar minha opinião política (dado sensível, LGPD art. 11) e consinto com o tratamento descrito na <a href="#privacidade" target="_blank">Política de privacidade</a>.</label>
+    <p class="erro-form" id="bv-erro" role="alert"></p>
+    <button class="btn verm peq" type="submit">Entrar na luta</button>
+  </form>
+</dialog>
+
+<dialog class="janela larga" id="j-publicar" aria-labelledby="j-publicar-t">
+  <form method="dialog" class="janela-cab"><h2 id="j-publicar-t">Publicar</h2><button class="fechar" aria-label="Fechar"><svg class="ico"><use href="#i-x"/></svg></button></form>
+  <form class="janela-corpo" id="form-publicar">
+    <div class="tipos" role="radiogroup" aria-label="Tipo de publicação">
+      <label><input type="radio" name="tipo" value="texto" checked><span>Texto</span></label>
+      <label><input type="radio" name="tipo" value="foto"><span>Foto</span></label>
+      <label><input type="radio" name="tipo" value="video"><span>Vídeo</span></label>
+      <label><input type="radio" name="tipo" value="reel"><span>Reel</span></label>
+      <label><input type="radio" name="tipo" value="story"><span>Story 24h</span></label>
+    </div>
+    <div class="campo"><label for="pub-texto">O que está rolando?</label><textarea id="pub-texto" name="texto" rows="4" maxlength="3000" placeholder="Conte o que aconteceu, onde e quando. Se for notícia, coloque a fonte."></textarea></div>
+    <p class="aviso-link" id="aviso-link" hidden><b>Confira antes de compartilhar:</b> o link é de uma fonte confiável? A notícia é recente? Links de contas novas passam pela moderação.</p>
+    <div class="campo arquivos" id="campo-arquivos" hidden>
+      <label for="pub-arquivos" id="rotulo-arquivos">Fotos</label>
+      <input id="pub-arquivos" type="file" accept="image/jpeg,image/png,image/webp" multiple>
+      <small id="dica-arquivos">Até 6 fotos. A localização gravada pelo celular é apagada automaticamente.</small>
+      <div class="previas" id="previas"></div>
+    </div>
+    <details class="onde" id="pub-onde">
+      <summary>Marcar no mapa <small>(opcional)</small></summary>
+      <div class="campo"><label for="pub-evento">É registro de um evento?</label><select id="pub-evento" name="evento_id"><option value="">Não</option></select></div>
+      <div class="mini-mapa" id="pub-mapa"></div>
+      <div class="linha2"><button type="button" class="mini" id="pub-gps">Usar minha localização</button><span class="fonte-pq" id="pub-lugar">Toque no mapa para marcar o local.</span></div>
+    </details>
+    <p class="erro-form" id="pub-erro" role="alert"></p>
+    <div class="linha2 fim"><span class="fonte-pq">Ao publicar você segue as <a href="#regras" target="_blank">regras</a>.</span><button class="btn verm peq" type="submit" id="pub-enviar">Publicar</button></div>
+  </form>
+</dialog>
+
+<dialog class="janela larga" id="j-borrar" aria-labelledby="j-borrar-t">
+  <div class="janela-cab"><h2 id="j-borrar-t">Borrar rostos</h2><button type="button" class="fechar" data-fechar-borrar aria-label="Fechar"><svg class="ico"><use href="#i-x"/></svg></button></div>
+  <div class="janela-corpo">
+    <p class="fonte-pq">Arraste o dedo ou o mouse sobre rostos, placas e documentos para borrar. Proteja quem não autorizou aparecer.</p>
+    <div class="borrar-area"><canvas id="borrar-canvas"></canvas></div>
+    <div class="linha2 fim"><button type="button" class="mini" id="borrar-desfazer">Desfazer</button><button type="button" class="btn broto peq" id="borrar-ok">Pronto</button></div>
+  </div>
+</dialog>
+
+<dialog class="janela larga" id="j-evento" aria-labelledby="j-evento-t">
+  <form method="dialog" class="janela-cab"><h2 id="j-evento-t">Criar evento</h2><button class="fechar" aria-label="Fechar"><svg class="ico"><use href="#i-x"/></svg></button></form>
+  <form class="janela-corpo" id="form-evento">
+    <div class="campo"><label for="ev-titulo">Nome do ato ou evento</label><input id="ev-titulo" name="titulo" required maxlength="120" placeholder="Ex.: Ato pelo fim da escala 6x1"></div>
+    <div class="linha2">
+      <div class="campo"><label for="ev-inicio">Começa</label><input id="ev-inicio" name="inicio" type="datetime-local" required></div>
+      <div class="campo"><label for="ev-fim">Termina <small>(opcional)</small></label><input id="ev-fim" name="fim" type="datetime-local"></div>
+    </div>
+    <div class="campo"><label for="ev-local">Local (sempre um lugar público)</label><input id="ev-local" name="local_nome" maxlength="120" placeholder="Ex.: Praça da Sé"></div>
+    <div class="mini-mapa alto" id="ev-mapa"></div>
+    <div class="linha2"><button type="button" class="mini" id="ev-gps">Usar minha localização</button><span class="fonte-pq" id="ev-lugar">Toque no mapa para marcar o ponto de encontro.</span></div>
+    <div class="campo"><label for="ev-desc">Descrição</label><textarea id="ev-desc" name="descricao" rows="4" maxlength="3000" placeholder="Pauta, horário de concentração, o que levar, quem organiza."></textarea></div>
+    <div class="campo"><label for="ev-link">Link oficial <small>(opcional, https://)</small></label><input id="ev-link" name="link" type="url" maxlength="500" placeholder="https://"></div>
+    <p class="erro-form" id="ev-erro" role="alert"></p>
+    <div class="linha2 fim"><span class="fonte-pq">Eventos aparecem no mapa depois da aprovação da moderação.</span><button class="btn verm peq" type="submit">Enviar evento</button></div>
+  </form>
+</dialog>
+
+<dialog class="janela" id="j-denunciar" aria-labelledby="j-denunciar-t">
+  <form method="dialog" class="janela-cab"><h2 id="j-denunciar-t">Denunciar</h2><button class="fechar" aria-label="Fechar"><svg class="ico"><use href="#i-x"/></svg></button></form>
+  <form class="janela-corpo" id="form-denunciar">
+    <p>A denúncia é anônima para quem publicou. A equipe analisa todas.</p>
+    <div class="campo"><label for="den-motivo">Motivo</label><select id="den-motivo" name="motivo" required></select></div>
+    <div class="campo"><label for="den-detalhe">Detalhes <small>(opcional)</small></label><textarea id="den-detalhe" name="detalhe" rows="3" maxlength="1000"></textarea></div>
+    <div class="campo" id="den-contato-campo" hidden><label for="den-contato">Seu e-mail para retorno</label><input id="den-contato" name="contato" type="email" maxlength="190"></div>
+    <p class="erro-form" id="den-erro" role="alert"></p>
+    <button class="btn verm peq" type="submit">Enviar denúncia</button>
+  </form>
+</dialog>
+
+<dialog class="story-tela" id="j-story" aria-label="Stories">
+  <div class="story-barras" id="story-barras"></div>
+  <div class="story-cab" id="story-cab"></div>
+  <button type="button" class="story-fechar" data-fechar-story aria-label="Fechar"><svg class="ico"><use href="#i-x"/></svg></button>
+  <div class="story-midia" id="story-midia"></div>
+  <button type="button" class="story-nav ant" data-story="-1" aria-label="Anterior"></button>
+  <button type="button" class="story-nav prox" data-story="1" aria-label="Próximo"></button>
+  <p class="story-texto" id="story-texto"></p>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/maplibre-gl@5/dist/maplibre-gl.js" defer></script>
+<script src="assets/js/rede.js" charset="utf-8"></script>
+<script src="assets/js/app.js" charset="utf-8"></script>
+</body>
+</html>

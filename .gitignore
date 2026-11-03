@@ -1,0 +1,12 @@
+node_modules/
+robo/pauta/*.json
+robo/pauta/*.md
+.DS_Store
+.env
+.gemini/
+# Configuração com senhas: NUNCA vai para o GitHub
+mobiliza-config.php
+# Fotos e vídeos enviados pelas pessoas (ficam só no servidor)
+site/uploads/*
+!site/uploads/.htaccess
+testes/.local/

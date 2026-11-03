@@ -1,0 +1,35 @@
+{
+  "atualizado_em": "2026-10-28",
+  "checagens": [
+    {
+      "id": "modelo-falso",
+      "modelo": true,
+      "veredito": "falso",
+      "titulo": "Título curto da checagem",
+      "circula": "A frase exata que está rodando nos grupos, entre aspas.",
+      "verdade": "Duas ou três frases com o fato, em linguagem simples.",
+      "data": "2026-10-28",
+      "fontes": []
+    },
+    {
+      "id": "modelo-enganoso",
+      "modelo": true,
+      "veredito": "enganoso",
+      "titulo": "Quando a notícia tem parte de verdade",
+      "circula": "Um dado real usado fora de contexto.",
+      "verdade": "O contexto que falta e por que ele muda o sentido.",
+      "data": "2026-10-28",
+      "fontes": []
+    },
+    {
+      "id": "modelo-verdadeiro",
+      "modelo": true,
+      "veredito": "verdadeiro",
+      "titulo": "Quando é verdade e vale espalhar",
+      "circula": "Informação correta que está sendo desacreditada.",
+      "verdade": "A confirmação, com a fonte oficial.",
+      "data": "2026-10-28",
+      "fontes": []
+    }
+  ]
+}

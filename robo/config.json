@@ -1,0 +1,84 @@
+{
+  "_leia": "Temas que o robô monitora. Edite as palavras-chave à vontade: elas são usadas para buscar projetos na Câmara e notícias no Google Notícias.",
+  "dias_proposicoes": 7,
+  "dias_noticias": 2,
+  "max_noticias_por_tema": 8,
+  "tipos_proposicao": [
+    "PL",
+    "PEC",
+    "PLP",
+    "MPV"
+  ],
+  "temas": [
+    {
+      "id": "meio-ambiente",
+      "nome": "Meio ambiente",
+      "palavras": [
+        "caça",
+        "agrotóxico",
+        "licenciamento ambiental",
+        "desmatamento"
+      ]
+    },
+    {
+      "id": "trabalho",
+      "nome": "Trabalho",
+      "palavras": [
+        "escala 6x1",
+        "jornada de trabalho",
+        "terceirização"
+      ]
+    },
+    {
+      "id": "armas",
+      "nome": "Armas",
+      "palavras": [
+        "porte de arma",
+        "armas de fogo",
+        "colecionadores atiradores caçadores"
+      ]
+    },
+    {
+      "id": "povos",
+      "nome": "Povos indígenas e quilombolas",
+      "palavras": [
+        "marco temporal",
+        "terras indígenas",
+        "quilombola"
+      ]
+    },
+    {
+      "id": "democracia",
+      "nome": "Democracia",
+      "palavras": [
+        "anistia",
+        "desinformação",
+        "regulação das redes"
+      ]
+    }
+  ],
+  "dias_checagens": 3,
+  "max_checagens_por_fonte": 6,
+  "fontes_checagem": [
+    {
+      "nome": "Aos Fatos",
+      "consulta": "site:aosfatos.org"
+    },
+    {
+      "nome": "Agência Lupa",
+      "consulta": "site:lupa.uol.com.br"
+    },
+    {
+      "nome": "g1 Fato ou Fake",
+      "consulta": "\"Fato ou Fake\" site:g1.globo.com"
+    },
+    {
+      "nome": "Estadão Verifica",
+      "consulta": "\"Estadão Verifica\""
+    },
+    {
+      "nome": "UOL Confere",
+      "consulta": "\"UOL Confere\""
+    }
+  ]
+}

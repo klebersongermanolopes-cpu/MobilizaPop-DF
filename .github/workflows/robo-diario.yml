@@ -1,0 +1,92 @@
+# Robô diário: coleta dados públicos, o Claude escreve os rascunhos e abre um pedido de revisão (pull request).
+# Nada é publicado sem uma pessoa da equipe aprovar o pull request.
+#
+# Usa a assinatura Claude Pro/Max da equipe (sem custo por uso): no seu computador, rode
+#   claude setup-token
+# e cadastre o resultado no segredo CLAUDE_CODE_OAUTH_TOKEN (Settings > Secrets and variables > Actions).
+# Se esse segredo não existir mas houver GEMINI_API_KEY, o robô antigo (Gemini) é usado como reserva.
+name: Robô diário
+
+on:
+  schedule:
+    - cron: "17 11 * * *" # 8h17 em Brasília
+    - cron: "17 20 * * *" # 17h17 em Brasília
+  workflow_dispatch: # botão "Run workflow" na aba Actions
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+concurrency:
+  group: robo-diario
+  cancel-in-progress: false
+
+jobs:
+  robo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Ver qual IA está configurada
+        id: ia
+        env:
+          CLAUDE: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          GEMINI: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          if [ -n "$CLAUDE" ]; then echo "qual=claude" >> "$GITHUB_OUTPUT"
+          elif [ -n "$GEMINI" ]; then echo "qual=gemini" >> "$GITHUB_OUTPUT"; echo "::warning::Sem CLAUDE_CODE_OAUTH_TOKEN: usando o Gemini como reserva."
+          else echo "::error::Cadastre o segredo CLAUDE_CODE_OAUTH_TOKEN (veja o LEIA-ME)."; exit 1; fi
+          echo "QUANDO=$(TZ=America/Sao_Paulo date '+%d/%m às %Hh%M')" >> "$GITHUB_ENV"
+          echo "AGORA=$(TZ=America/Sao_Paulo date '+%Y-%m-%dT%H:%M:%S-03:00')" >> "$GITHUB_ENV"
+
+      - name: Coletar dados públicos (Câmara, Senado, notícias, checagens)
+        timeout-minutes: 10
+        run: node robo/coletar.mjs
+
+      - name: Claude escreve os rascunhos
+        if: steps.ia.outputs.qual == 'claude'
+        timeout-minutes: 25
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            Agora é ${{ env.AGORA }} (horário de Brasília).
+            Leia o CLAUDE.md e siga, passo a passo, as instruções de .claude/skills/boletim-diario/SKILL.md.
+            Você só pode alterar arquivos em site/data/*.json e escrever robo/pauta/relatorio.md.
+            Não faça commit nem push: o próximo passo do fluxo abre o pull request para revisão humana.
+          claude_args: >-
+            --max-turns 60
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebFetch,Bash(node robo/validar.mjs)"
+
+      - name: Gemini escreve os rascunhos (reserva)
+        if: steps.ia.outputs.qual == 'gemini'
+        timeout-minutes: 12
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node robo/escrever-ia.mjs
+
+      - name: Conferir o conteúdo
+        run: node robo/validar.mjs
+
+      - name: Preparar descrição do pedido de revisão
+        run: |
+          [ -f robo/pauta/relatorio.md ] || echo "O robô rodou, mas não deixou relatório. Confira as mudanças na aba Files changed." > robo/pauta/relatorio.md
+
+      - name: Abrir pedido de revisão
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: robo/rascunhos
+          delete-branch: true
+          commit-message: "Rascunhos do robô (${{ env.QUANDO }})"
+          title: "Rascunhos do robô: ${{ env.QUANDO }}"
+          body-path: robo/pauta/relatorio.md
+          labels: revisar
+          add-paths: |
+            site/data/*.json

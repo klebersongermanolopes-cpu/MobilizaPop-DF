@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Painel da equipe | Mobiliza Pop</title>
+<link rel="icon" type="image/png" href="../assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Archivo:wght@400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../assets/css/estilo.css">
+<link rel="stylesheet" href="../assets/css/rede.css">
+<link rel="stylesheet" href="painel.css">
+</head>
+<body class="painel">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-sai" viewBox="0 0 16 16"><path d="M5 3h8v8M13 3 3 13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/></symbol>
+  <symbol id="i-x" viewBox="0 0 16 16"><path d="M3 3l10 10M13 3 3 13" fill="none" stroke="currentColor" stroke-width="2.6"/></symbol>
+  <symbol id="i-punho" viewBox="0 0 24 24"><path d="M7 11V6.5a1.5 1.5 0 0 1 3 0V10m0-4.5V5a1.5 1.5 0 0 1 3 0v5m0-4.5a1.5 1.5 0 0 1 3 0V11m0-3.5a1.5 1.5 0 0 1 3 0V14a7 7 0 0 1-7 7h-1a6 6 0 0 1-6-6v-2a2 2 0 0 1 2-2h3" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-balao" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pino" viewBox="0 0 24 24"><path d="M12 22s7-7.2 7-12.5A7 7 0 0 0 5 9.5C5 14.8 12 22 12 22z" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="12" cy="9.5" r="2.6" fill="currentColor"/></symbol>
+  <symbol id="i-bandeira" viewBox="0 0 24 24"><path d="M5 21V4m0 0h12l-2 4 2 4H5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="../#rede" aria-label="Voltar ao site">
+      <span class="selo selo-mini" aria-hidden="true"><span class="marca-img"></span></span>
+      <b>Painel<span>da equipe</span></b>
+    </a>
+    <nav class="menu" aria-label="Seções do painel" id="abas">
+      <a href="#resumo" data-aba="resumo">Resumo</a>
+      <a href="#fila" data-aba="fila">Fila <span class="n" id="n-fila"></span></a>
+      <a href="#denuncias" data-aba="denuncias">Denúncias <span class="n" id="n-den"></span></a>
+      <a href="#pessoas" data-aba="pessoas">Pessoas</a>
+      <a href="#oficiais" data-aba="oficiais" data-admin>Publicações</a>
+      <a href="#registro" data-aba="registro" data-admin>Registro</a>
+    </nav>
+    <div class="conta" id="conta-painel"></div>
+  </div>
+</header>
+
+<main class="wrap painel-corpo" id="painel">
+  <p class="carregando">Carregando…</p>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="painel.js" charset="utf-8"></script>
+</body>
+</html>

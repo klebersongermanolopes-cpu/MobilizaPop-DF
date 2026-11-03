@@ -1,0 +1,58 @@
+# Publica a pasta site/ na Hostinger sempre que algo entra na main (por exemplo, quando você aprova os rascunhos do robô).
+# Antes de publicar, roda o validador e os testes: conteúdo ou código com erro não vai para o ar.
+#
+# Segredos necessários (Settings > Secrets and variables > Actions > New repository secret):
+#   FTP_SERVIDOR  (hPanel > Arquivos > Contas FTP: "Host FTP", ex.: ftp.seudominio.com.br ou o IP)
+#   FTP_USUARIO   (ex.: u123456789.seudominio.com.br)
+#   FTP_SENHA
+# Variável opcional (aba Variables): FTP_PASTA  — pasta de destino no servidor (padrão: public_html/)
+name: Publicar na Hostinger
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publicar
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          extensions: pdo_sqlite, gd, intl, fileinfo, curl
+
+      - name: Conferir o conteúdo
+        run: node robo/validar.mjs
+
+      - name: Testar a API da rede
+        run: node --test testes/api.test.mjs
+
+      - name: Enviar para a Hostinger (FTPS)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVIDOR }}
+          username: ${{ secrets.FTP_USUARIO }}
+          password: ${{ secrets.FTP_SENHA }}
+          protocol: ftps
+          local-dir: ./site/
+          server-dir: ${{ vars.FTP_PASTA || 'public_html/' }}
+          # Nunca mexe nas fotos e vídeos enviados pelas pessoas
+          exclude: |
+            **/.git*
+            **/.git*/**
+            uploads/20*/**

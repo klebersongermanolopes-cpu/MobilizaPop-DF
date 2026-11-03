@@ -1,0 +1,36 @@
+{
+  "atualizado_em": "2026-10-28",
+  "edicoes": [
+    {
+      "id": "2026-10-28-exemplo",
+      "data": "2026-10-28",
+      "hora": "18h",
+      "exemplo": true,
+      "gerado_por_ia": false,
+      "manchete": "Consulta do PL da caça segue aberta e o não lidera por pouco",
+      "itens": [
+        {
+          "tipo": "alerta",
+          "titulo": "PL 3615/2019: vote na consulta",
+          "texto": "O não tem 14.388 votos contra 10.660 do sim (Senado, 28/10, 17h54). A diferença é pequena.",
+          "url": "https://www12.senado.leg.br/ecidadania/visualizacaomateria?id=137353",
+          "fonte": "e-Cidadania"
+        },
+        {
+          "tipo": "agenda",
+          "titulo": "Posse do novo Congresso em 1º de fevereiro",
+          "texto": "Quem foi eleito em 2026 assume o mandato. É hora de saber quem representa o seu estado.",
+          "url": null,
+          "fonte": null
+        },
+        {
+          "tipo": "noticia",
+          "titulo": "Espaço para uma notícia do dia",
+          "texto": "Quando o robô estiver ligado, aqui entram as notícias coletadas e revisadas pela equipe, sempre com link para a fonte.",
+          "url": null,
+          "fonte": null
+        }
+      ]
+    }
+  ]
+}

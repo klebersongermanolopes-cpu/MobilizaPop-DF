@@ -1,0 +1,736 @@
+{
+  "atualizado_em": "2026-10-29",
+  "fonte": "API Dados Abertos do Senado Federal",
+  "amostra": false,
+  "parlamentares": [
+    {
+      "id": "5672",
+      "nome": "Alan Rick",
+      "partido": "REPUBLICANOS",
+      "uf": "AC",
+      "email": "sen.alanrick@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5672.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5672"
+    },
+    {
+      "id": "5982",
+      "nome": "Alessandro Vieira",
+      "partido": "MDB",
+      "uf": "SE",
+      "email": "sen.alessandrovieira@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5982.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5982"
+    },
+    {
+      "id": "6358",
+      "nome": "Ana Paula Lobato",
+      "partido": "PSB",
+      "uf": "MA",
+      "email": "sen.anapaulalobato@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6358.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6358"
+    },
+    {
+      "id": "5967",
+      "nome": "Angelo Coronel",
+      "partido": "REPUBLICANOS",
+      "uf": "BA",
+      "email": "sen.angelocoronel@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5967.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5967"
+    },
+    {
+      "id": "6009",
+      "nome": "Astronauta Marcos Pontes",
+      "partido": "PL",
+      "uf": "SP",
+      "email": "sen.astronautamarcospontes@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6009.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6009"
+    },
+    {
+      "id": "4639",
+      "nome": "Beto Faro",
+      "partido": "PT",
+      "uf": "PA",
+      "email": "sen.betofaro@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador4639.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/4639"
+    },
+    {
+      "id": "6336",
+      "nome": "Camilo Santana",
+      "partido": "PT",
+      "uf": "CE",
+      "email": "sen.camilosantana@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6336.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6336"
+    },
+    {
+      "id": "6295",
+      "nome": "Carlos Fávaro",
+      "partido": "PSD",
+      "uf": "MT",
+      "email": "sen.carlosfavaro@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6295.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6295"
+    },
+    {
+      "id": "5936",
+      "nome": "Carlos Portinho",
+      "partido": "PL",
+      "uf": "RJ",
+      "email": "sen.carlosportinho@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5936.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5936"
+    },
+    {
+      "id": "5990",
+      "nome": "Carlos Viana",
+      "partido": "PSD",
+      "uf": "MG",
+      "email": "sen.carlosviana@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5990.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5990"
+    },
+    {
+      "id": "470",
+      "nome": "Chico Rodrigues",
+      "partido": "PSB",
+      "uf": "RR",
+      "email": "sen.chicorodrigues@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador470.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/470"
+    },
+    {
+      "id": "5973",
+      "nome": "Cid Gomes",
+      "partido": "PSB",
+      "uf": "CE",
+      "email": "sen.cidgomes@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5973.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5973"
+    },
+    {
+      "id": "739",
+      "nome": "Ciro Nogueira",
+      "partido": "PP",
+      "uf": "PI",
+      "email": "sen.cironogueira@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador739.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/739"
+    },
+    {
+      "id": "6337",
+      "nome": "Cleitinho",
+      "partido": "REPUBLICANOS",
+      "uf": "MG",
+      "email": "sen.cleitinho@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6337.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6337"
+    },
+    {
+      "id": "475",
+      "nome": "Confúcio Moura",
+      "partido": "MDB",
+      "uf": "RO",
+      "email": "sen.confuciomoura@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador475.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/475"
+    },
+    {
+      "id": "6335",
+      "nome": "Damares Alves",
+      "partido": "REPUBLICANOS",
+      "uf": "DF",
+      "email": "sen.damaresalves@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6335.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6335"
+    },
+    {
+      "id": "5998",
+      "nome": "Daniella Ribeiro",
+      "partido": "PP",
+      "uf": "PB",
+      "email": "sen.daniellaribeiro@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5998.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5998"
+    },
+    {
+      "id": "3830",
+      "nome": "Davi Alcolumbre",
+      "partido": "UNIÃO",
+      "uf": "AP",
+      "email": "sen.davialcolumbre@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador3830.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/3830"
+    },
+    {
+      "id": "5793",
+      "nome": "Dr. Hiran",
+      "partido": "PP",
+      "uf": "RR",
+      "email": "sen.drhiran@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5793.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5793"
+    },
+    {
+      "id": "5906",
+      "nome": "Dra. Eudócia",
+      "partido": "PSDB",
+      "uf": "AL",
+      "email": "sen.draeudocia@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5906.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5906"
+    },
+    {
+      "id": "4994",
+      "nome": "Eduardo Braga",
+      "partido": "MDB",
+      "uf": "AM",
+      "email": "sen.eduardobraga@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador4994.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/4994"
+    },
+    {
+      "id": "3777",
+      "nome": "Eduardo Gomes",
+      "partido": "PL",
+      "uf": "TO",
+      "email": "sen.eduardogomes@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador3777.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/3777"
+    },
+    {
+      "id": "4642",
+      "nome": "Efraim Filho",
+      "partido": "PL",
+      "uf": "PB",
+      "email": "sen.efraimfilho@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador4642.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/4642"
+    },
+    {
+      "id": "5718",
+      "nome": "Eliziane Gama",
+      "partido": "PSD",
+      "uf": "MA",
+      "email": "sen.elizianegama@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5718.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5718"
+    },
+    {
+      "id": "22",
+      "nome": "Esperidião Amin",
+      "partido": "PP",
+      "uf": "SC",
+      "email": "sen.esperidiaoamin@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador22.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/22"
+    },
+    {
+      "id": "5953",
+      "nome": "Fabiano Contarato",
+      "partido": "PT",
+      "uf": "ES",
+      "email": "sen.fabianocontarato@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5953.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5953"
+    },
+    {
+      "id": "5917",
+      "nome": "Fernando Dueire",
+      "partido": "PSD",
+      "uf": "PE",
+      "email": "sen.fernandodueire@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5917.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5917"
+    },
+    {
+      "id": "345",
+      "nome": "Flávio Arns",
+      "partido": "PSB",
+      "uf": "PR",
+      "email": "sen.flavioarns@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador345.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/345"
+    },
+    {
+      "id": "5894",
+      "nome": "Flávio Bolsonaro",
+      "partido": "PL",
+      "uf": "RJ",
+      "email": "sen.flaviobolsonaro@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5894.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5894"
+    },
+    {
+      "id": "6008",
+      "nome": "Giordano",
+      "partido": "PODE",
+      "uf": "SP",
+      "email": "sen.giordano@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6008.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6008"
+    },
+    {
+      "id": "6341",
+      "nome": "Hamilton Mourão",
+      "partido": "REPUBLICANOS",
+      "uf": "RS",
+      "email": "sen.hamiltonmourao@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6341.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6341"
+    },
+    {
+      "id": "5008",
+      "nome": "Humberto Costa",
+      "partido": "PT",
+      "uf": "PE",
+      "email": "sen.humbertocosta@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5008.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5008"
+    },
+    {
+      "id": "5385",
+      "nome": "Irajá",
+      "partido": "PSD",
+      "uf": "TO",
+      "email": "sen.iraja@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5385.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5385"
+    },
+    {
+      "id": "6010",
+      "nome": "Ivete da Silveira",
+      "partido": "MDB",
+      "uf": "SC",
+      "email": "sen.ivetedasilveira@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6010.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6010"
+    },
+    {
+      "id": "4770",
+      "nome": "Izalci Lucas",
+      "partido": "PL",
+      "uf": "DF",
+      "email": "sen.izalcilucas@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador4770.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/4770"
+    },
+    {
+      "id": "35",
+      "nome": "Jader Barbalho",
+      "partido": "MDB",
+      "uf": "PA",
+      "email": "sen.jaderbarbalho@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador35.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/35"
+    },
+    {
+      "id": "6340",
+      "nome": "Jaime Bagattoli",
+      "partido": "PL",
+      "uf": "RO",
+      "email": "sen.jaimebagattoli@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6340.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6340"
+    },
+    {
+      "id": "581",
+      "nome": "Jaques Wagner",
+      "partido": "PT",
+      "uf": "BA",
+      "email": "sen.jaqueswagner@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador581.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/581"
+    },
+    {
+      "id": "4531",
+      "nome": "Jayme Campos",
+      "partido": "UNIÃO",
+      "uf": "MT",
+      "email": "sen.jaymecampos@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador4531.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/4531"
+    },
+    {
+      "id": "5895",
+      "nome": "Jorge Kajuru",
+      "partido": "PSB",
+      "uf": "GO",
+      "email": "sen.jorgekajuru@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5895.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5895"
+    },
+    {
+      "id": "6342",
+      "nome": "Jorge Seif",
+      "partido": "PL",
+      "uf": "SC",
+      "email": "sen.jorgeseif@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6342.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6342"
+    },
+    {
+      "id": "6369",
+      "nome": "Jussara Lima",
+      "partido": "PSD",
+      "uf": "PI",
+      "email": "sen.jussaralima@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6369.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6369"
+    },
+    {
+      "id": "4811",
+      "nome": "Laércio Oliveira",
+      "partido": "PP",
+      "uf": "SE",
+      "email": "sen.laerciooliveira@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador4811.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/4811"
+    },
+    {
+      "id": "5977",
+      "nome": "Leany Lemos",
+      "partido": "PSB",
+      "uf": "DF",
+      "email": "sen.leanylemos@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5977.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5977"
+    },
+    {
+      "id": "5926",
+      "nome": "Lucas Barreto",
+      "partido": "PSD",
+      "uf": "AP",
+      "email": "sen.lucasbarreto@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5926.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5926"
+    },
+    {
+      "id": "1186",
+      "nome": "Luis Carlos Heinze",
+      "partido": "PP",
+      "uf": "RS",
+      "email": "sen.luiscarlosheinze@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador1186.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/1186"
+    },
+    {
+      "id": "631",
+      "nome": "Magno Malta",
+      "partido": "PL",
+      "uf": "ES",
+      "email": "sen.magnomalta@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador631.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/631"
+    },
+    {
+      "id": "5376",
+      "nome": "Mara Gabrilli",
+      "partido": "PSD",
+      "uf": "SP",
+      "email": "sen.maragabrilli@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5376.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5376"
+    },
+    {
+      "id": "742",
+      "nome": "Marcelo Castro",
+      "partido": "MDB",
+      "uf": "PI",
+      "email": "sen.marcelocastro@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador742.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/742"
+    },
+    {
+      "id": "285",
+      "nome": "Marcio Bittar",
+      "partido": "PL",
+      "uf": "AC",
+      "email": "sen.marciobittar@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador285.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/285"
+    },
+    {
+      "id": "5942",
+      "nome": "Marcos do Val",
+      "partido": "AVANTE",
+      "uf": "ES",
+      "email": "sen.marcosdoval@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5942.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5942"
+    },
+    {
+      "id": "5422",
+      "nome": "Marcos Rogério",
+      "partido": "PL",
+      "uf": "RO",
+      "email": "sen.marcosrogerio@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5422.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5422"
+    },
+    {
+      "id": "5985",
+      "nome": "Nelsinho Trad",
+      "partido": "PSD",
+      "uf": "MS",
+      "email": "sen.nelsinhotrad@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5985.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5985"
+    },
+    {
+      "id": "5525",
+      "nome": "Omar Aziz",
+      "partido": "PSD",
+      "uf": "AM",
+      "email": "sen.omaraziz@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5525.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5525"
+    },
+    {
+      "id": "5924",
+      "nome": "Oriovisto Guimarães",
+      "partido": "PSDB",
+      "uf": "PR",
+      "email": "sen.oriovistoguimaraes@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5924.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5924"
+    },
+    {
+      "id": "5523",
+      "nome": "Otto Alencar",
+      "partido": "PSD",
+      "uf": "BA",
+      "email": "sen.ottoalencar@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5523.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5523"
+    },
+    {
+      "id": "825",
+      "nome": "Paulo Paim",
+      "partido": "PT",
+      "uf": "RS",
+      "email": "sen.paulopaim@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador825.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/825"
+    },
+    {
+      "id": "5502",
+      "nome": "Plínio Valério",
+      "partido": "PSDB",
+      "uf": "AM",
+      "email": "sen.pliniovalerio@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5502.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5502"
+    },
+    {
+      "id": "5386",
+      "nome": "Professora Dorinha Seabra",
+      "partido": "UNIÃO",
+      "uf": "TO",
+      "email": "sen.professoradorinhaseabra@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5386.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5386"
+    },
+    {
+      "id": "5012",
+      "nome": "Randolfe Rodrigues",
+      "partido": "PT",
+      "uf": "AP",
+      "email": "sen.randolferodrigues@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5012.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5012"
+    },
+    {
+      "id": "70",
+      "nome": "Renan Calheiros",
+      "partido": "MDB",
+      "uf": "AL",
+      "email": "sen.renancalheiros@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador70.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/70"
+    },
+    {
+      "id": "5207",
+      "nome": "Renan Filho",
+      "partido": "MDB",
+      "uf": "AL",
+      "email": "sen.renanfilho@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5207.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5207"
+    },
+    {
+      "id": "5257",
+      "nome": "Renzo Braz",
+      "partido": "PP",
+      "uf": "MG",
+      "email": null,
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5257.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5257"
+    },
+    {
+      "id": "6025",
+      "nome": "Roberta Acioly",
+      "partido": "REPUBLICANOS",
+      "uf": "RR",
+      "email": "sen.robertaacioly@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6025.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6025"
+    },
+    {
+      "id": "5352",
+      "nome": "Rogério Carvalho",
+      "partido": "PT",
+      "uf": "SE",
+      "email": "sen.rogeriocarvalho@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5352.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5352"
+    },
+    {
+      "id": "4694",
+      "nome": "Rogerio Marinho",
+      "partido": "PL",
+      "uf": "RN",
+      "email": "sen.rogeriomarinho@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador4694.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/4694"
+    },
+    {
+      "id": "5322",
+      "nome": "Romário",
+      "partido": "S/Partido",
+      "uf": "RJ",
+      "email": "sen.romario@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5322.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5322"
+    },
+    {
+      "id": "5974",
+      "nome": "Sargento Reginauro",
+      "partido": "PSDB",
+      "uf": "CE",
+      "email": null,
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5974.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5974"
+    },
+    {
+      "id": "6331",
+      "nome": "Sergio Moro",
+      "partido": "PL",
+      "uf": "PR",
+      "email": "sen.sergiomoro@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6331.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6331"
+    },
+    {
+      "id": "4560",
+      "nome": "Sérgio Petecão",
+      "partido": "PSD",
+      "uf": "AC",
+      "email": "sen.sergiopetecao@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador4560.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/4560"
+    },
+    {
+      "id": "5988",
+      "nome": "Soraya Thronicke",
+      "partido": "PSB",
+      "uf": "MS",
+      "email": "sen.sorayathronicke@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5988.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5988"
+    },
+    {
+      "id": "5959",
+      "nome": "Styvenson Valentim",
+      "partido": "PODE",
+      "uf": "RN",
+      "email": "sen.styvensonvalentim@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5959.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5959"
+    },
+    {
+      "id": "6338",
+      "nome": "Teresa Leitão",
+      "partido": "PT",
+      "uf": "PE",
+      "email": "sen.teresaleitao@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador6338.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/6338"
+    },
+    {
+      "id": "5736",
+      "nome": "Tereza Cristina",
+      "partido": "PP",
+      "uf": "MS",
+      "email": "sen.terezacristina@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5736.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5736"
+    },
+    {
+      "id": "5899",
+      "nome": "Vanderlan Cardoso",
+      "partido": "PSD",
+      "uf": "GO",
+      "email": "sen.vanderlancardoso@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5899.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5899"
+    },
+    {
+      "id": "5748",
+      "nome": "Veneziano Vital do Rêgo",
+      "partido": "MDB",
+      "uf": "PB",
+      "email": "sen.venezianovitaldorego@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5748.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5748"
+    },
+    {
+      "id": "1173",
+      "nome": "Wellington Fagundes",
+      "partido": "PL",
+      "uf": "MT",
+      "email": "sen.wellingtonfagundes@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador1173.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/1173"
+    },
+    {
+      "id": "5411",
+      "nome": "Weverton",
+      "partido": "PDT",
+      "uf": "MA",
+      "email": "sen.wevertonrocha@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5411.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5411"
+    },
+    {
+      "id": "5070",
+      "nome": "Wilder Morais",
+      "partido": "PL",
+      "uf": "GO",
+      "email": "sen.wildermorais@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5070.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5070"
+    },
+    {
+      "id": "5783",
+      "nome": "Zenaide Maia",
+      "partido": "PSD",
+      "uf": "RN",
+      "email": "sen.zenaidemaia@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador5783.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/5783"
+    },
+    {
+      "id": "3806",
+      "nome": "Zequinha Marinho",
+      "partido": "PODE",
+      "uf": "PA",
+      "email": "sen.zequinhamarinho@senado.leg.br",
+      "foto": "https://www.senado.leg.br/senadores/img/fotos-oficiais/senador3806.jpg",
+      "url": "https://www25.senado.leg.br/web/senadores/senador/-/perfil/3806"
+    }
+  ]
+}

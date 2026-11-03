@@ -1,0 +1,184 @@
+# Painel de administração do Mobiliza Pop (Sveltia CMS).
+# Cada "Salvar" vira um commit na main. A publicação na Hostinger só acontece se o validador aprovar.
+backend:
+  name: github
+  repo: MiraTHC/mobiliza-pop
+  branch: main
+  commit_messages:
+    create: "Painel: cria {{collection}} {{slug}}"
+    update: "Painel: atualiza {{collection}} {{slug}}"
+    delete: "Painel: apaga {{collection}} {{slug}}"
+
+media_folder: site/assets/img/uploads
+public_folder: assets/img/uploads
+
+site_url: https://SEU-DOMINIO/  # troque pelo domínio da Hostinger
+display_url: https://SEU-DOMINIO/
+logo_url: ../assets/img/apple-touch-icon.png
+
+collections:
+  - name: conteudo
+    label: Conteúdo do site
+    editor:
+      preview: false
+    files:
+      # ---------------- CHECAGENS ----------------
+      - name: checagens
+        label: Checagens
+        file: site/data/checagens.json
+        format: json
+        fields:
+          - { name: atualizado_em, label: "Atualizado em", widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+          - name: checagens
+            label: Checagens
+            label_singular: Checagem
+            widget: list
+            summary: "{{fields.veredito}} | {{fields.titulo}}"
+            hint: "A primeira da lista aparece primeiro no site. Arraste para reordenar."
+            fields:
+              - { name: id, label: "Identificador (sem espaços, ex.: 2026-10-29-pix)", widget: string, pattern: ['^[a-z0-9-]+$', "Use só letras minúsculas, números e hífen"] }
+              - { name: veredito, label: Veredito, widget: select, options: [{ label: Falso, value: falso }, { label: Enganoso, value: enganoso }, { label: Verdadeiro, value: verdadeiro }] }
+              - { name: titulo, label: "Título (até 120 caracteres)", widget: string }
+              - { name: circula, label: "O que circula (a frase entre aspas)", widget: text }
+              - { name: verdade, label: "O que é verdade", widget: text }
+              - { name: data, label: Data, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+              - name: fontes
+                label: Fontes
+                label_singular: Fonte
+                widget: list
+                min: 1
+                hint: "Sem fonte, não publica. O site não aceita checagem sem pelo menos uma fonte com link https."
+                fields:
+                  - { name: nome, label: "Nome da fonte", widget: string }
+                  - { name: url, label: "Link (https://...)", widget: string }
+              - { name: gerado_por_ia, label: "Escrito por IA", widget: boolean, default: false, required: false }
+              - { name: modelo, label: "É só um modelo (não publicar como real)", widget: boolean, default: false, required: false }
+
+      # ---------------- ALERTAS ----------------
+      - name: alertas
+        label: Alertas (projetos de lei)
+        file: site/data/alertas.json
+        format: json
+        fields:
+          - { name: atualizado_em, label: "Atualizado em", widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+          - name: alertas
+            label: Alertas
+            label_singular: Alerta
+            widget: list
+            summary: "{{fields.numero}} | {{fields.titulo}}"
+            fields:
+              - { name: slug, label: "Endereço da página (ex.: pl-1234-2026)", widget: string, pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', "Use só letras minúsculas, números e hífen"] }
+              - { name: numero, label: "Número (ex.: PL 1234/2026)", widget: string }
+              - { name: titulo, label: "Título", widget: string }
+              - { name: casa, label: Casa, widget: select, options: ["Senado Federal", "Câmara dos Deputados", "Congresso Nacional"] }
+              - { name: autoria, label: Autoria, widget: string, required: false }
+              - { name: situacao, label: "Situação (ex.: Consulta pública aberta)", widget: string, required: false }
+              - { name: prioridade, label: Prioridade, widget: select, options: [{ label: Alta, value: alta }, { label: Média, value: media }, { label: Baixa, value: baixa }], default: alta }
+              - { name: temas, label: Temas, widget: list, required: false }
+              - { name: atualizado_em, label: "Atualizado em", widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+              - { name: resumo, label: "Resumo (até 280 caracteres)", widget: text }
+              - name: capitulos
+                label: Capítulos da página
+                label_singular: Capítulo
+                widget: list
+                summary: "{{fields.rotulo}} | {{fields.titulo}}"
+                hint: "Ordem sugerida: O que é, Por que preocupa, Placar (se houver consulta), O que fazer."
+                fields:
+                  - { name: rotulo, label: "Rótulo curto (ex.: O que é)", widget: string }
+                  - { name: tipo, label: "Tipo especial", widget: select, required: false, options: [{ label: "Placar da consulta", value: placar }, { label: "Botões de ação", value: acao }] }
+                  - { name: titulo, label: Título, widget: string }
+                  - { name: texto, label: Parágrafos, label_singular: Parágrafo, widget: list, field: { name: paragrafo, label: Parágrafo, widget: text } }
+                  - { name: nota, label: "Nota de aviso (opcional)", widget: text, required: false }
+              - name: consulta
+                label: Consulta pública (opcional)
+                widget: object
+                required: false
+                fields:
+                  - { name: url, label: "Link da consulta", widget: string }
+                  - { name: sim, label: "Votos SIM", widget: number, value_type: int, min: 0 }
+                  - { name: nao, label: "Votos NÃO", widget: number, value_type: int, min: 0 }
+                  - { name: apurado_em, label: "Apurado em (AAAA-MM-DDTHH:MM:00-03:00)", widget: string }
+                  - { name: fonte, label: Fonte, widget: string, default: "e-Cidadania, Senado Federal" }
+              - name: acao
+                label: Botão principal (opcional)
+                widget: object
+                required: false
+                fields:
+                  - { name: texto, label: "Texto do botão (ex.: Votar não)", widget: string }
+                  - { name: url, label: Link, widget: string }
+              - { name: mensagem_whatsapp, label: "Mensagem pronta para o WhatsApp", widget: text, required: false }
+              - { name: mensagem_cobranca, label: "Mensagem de cobrança aos parlamentares", widget: text, required: false }
+              - name: fontes
+                label: Fontes
+                label_singular: Fonte
+                widget: list
+                min: 1
+                fields:
+                  - { name: nome, label: "Nome da fonte", widget: string }
+                  - { name: url, label: "Link (https://...)", widget: string }
+              - { name: camara_id, label: "ID na Câmara (para buscar votos; opcional)", widget: string, required: false }
+              - { name: gerado_por_ia, label: "Escrito por IA", widget: boolean, default: false }
+
+      # ---------------- BOLETIM ----------------
+      - name: boletim
+        label: Boletim
+        file: site/data/boletim.json
+        format: json
+        fields:
+          - { name: atualizado_em, label: "Atualizado em", widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+          - name: edicoes
+            label: Edições
+            label_singular: Edição
+            widget: list
+            summary: "{{fields.data}} {{fields.hora}} | {{fields.manchete}}"
+            fields:
+              - { name: id, label: "Identificador (ex.: 2026-10-29-tarde)", widget: string }
+              - { name: data, label: Data, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+              - { name: hora, label: "Hora (ex.: 17h)", widget: string, required: false }
+              - { name: manchete, label: Manchete, widget: string }
+              - name: itens
+                label: Itens
+                label_singular: Item
+                widget: list
+                summary: "{{fields.tipo}} | {{fields.titulo}}"
+                fields:
+                  - { name: tipo, label: Tipo, widget: select, options: [{ label: Alerta, value: alerta }, { label: Notícia, value: noticia }, { label: Agenda, value: agenda }, { label: Checagem, value: checagem }] }
+                  - { name: titulo, label: Título, widget: string }
+                  - { name: texto, label: Texto, widget: text }
+                  - { name: url, label: "Link (https://...)", widget: string, required: false }
+                  - { name: fonte, label: "Nome da fonte", widget: string, required: false }
+              - { name: gerado_por_ia, label: "Escrito por IA", widget: boolean, default: false, required: false }
+              - { name: exemplo, label: "É só um exemplo", widget: boolean, default: false, required: false }
+
+      # ---------------- AGENDA ----------------
+      - name: agenda
+        label: Agenda
+        file: site/data/agenda.json
+        format: json
+        fields:
+          - { name: atualizado_em, label: "Atualizado em", widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+          - name: eventos
+            label: Eventos
+            label_singular: Evento
+            widget: list
+            summary: "{{fields.data}} {{fields.rotulo_data}} | {{fields.titulo}}"
+            fields:
+              - { name: data, label: "Data (deixe vazio se não tiver data fixa)", widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false, required: false }
+              - { name: rotulo_data, label: "Texto no lugar da data (ex.: Aberta, A definir)", widget: string, required: false }
+              - { name: titulo, label: Título, widget: string }
+              - { name: descricao, label: Descrição, widget: string }
+              - { name: tag, label: "Etiqueta (ex.: Votar, Acompanhar)", widget: string }
+              - { name: url, label: "Link (opcional)", widget: string, required: false }
+              - { name: exemplo, label: "É só um exemplo", widget: boolean, default: false, required: false }
+
+      # ---------------- CONFIGURAÇÕES ----------------
+      - name: config
+        label: Configurações do site
+        file: site/data/config.json
+        format: json
+        fields:
+          - { name: nome, label: "Nome do site", widget: string }
+          - { name: instagram, label: "Link do Instagram", widget: string, required: false }
+          - { name: canal_whatsapp, label: "Link do canal no WhatsApp", widget: string, required: false }
+          - { name: email_contato, label: "E-mail de contato", widget: string, required: false }
+          - { name: manifesto_aprovado, label: "Manifesto aprovado (tira a marca de rascunho)", widget: boolean, default: false }

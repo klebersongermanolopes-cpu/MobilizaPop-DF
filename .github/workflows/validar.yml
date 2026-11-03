@@ -1,0 +1,26 @@
+# Confere o conteúdo e roda os testes em todo pull request e em todo envio para a main.
+name: Validar
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          extensions: pdo_sqlite, gd, intl, fileinfo, curl
+      - name: Sintaxe do PHP
+        run: for f in site/api/*.php site/api/lib/*.php; do php -l "$f"; done
+      - run: node --test "robo/testes/*.test.mjs"
+      - run: node --test testes/api.test.mjs
+      - run: node robo/validar.mjs
